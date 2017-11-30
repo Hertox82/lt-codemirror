@@ -32,6 +32,7 @@ import * as CodeMirror from 'codemirror';
 export class CodemirrorComponent implements AfterViewInit, OnDestroy {
 
   @Input() config;
+  @Input() size: {w:string|number, h:string|number};
   @Output() change = new EventEmitter();
   @Output() focus = new EventEmitter();
   @Output() blur = new EventEmitter();
@@ -69,13 +70,13 @@ export class CodemirrorComponent implements AfterViewInit, OnDestroy {
    */
   ngAfterViewInit() {
     this.config = this.config || {};
-    this.codemirrorInit(this.config);
+    this.codemirrorInit(this.config,this.size);
   }
 
   /**
    * Initialize codemirror
    */
-  codemirrorInit(config) {
+  codemirrorInit(config,size) {
     this.instance = CodeMirror.fromTextArea(this.host.nativeElement, config);
     this.instance.setValue(this._value);
 
@@ -94,6 +95,10 @@ export class CodemirrorComponent implements AfterViewInit, OnDestroy {
     this.instance.on('blur', (instance, event) => {
       this.blur.emit({instance, event});
     });
+
+    if (this.size != undefined || this.size != {}) {
+      this.instance.setSize(this.size.w, this.size.h);
+    }
   }
 
   /**

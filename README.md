@@ -45,6 +45,7 @@ import { Component } from 'angular2/core';
   template: `
     <codemirror [(ngModel)]="code"
       [config]="{...}"
+      [size]="{w:'100%',h:477}"
       (focus)="onFocus()"
       (blur)="onBlur()">
     </codemirror>
@@ -60,6 +61,8 @@ export class Sample{
 ### <a name="config"></a>Configuration
 
 * `config` : The configuration object for CodeMirror see http://codemirror.net/doc/manual.html#config
+
+Credits to **[Simon Babay](https://github.com/chymz)** forked from the [original package](https://github.com/chymz/ng2-codemirror).
 
 ### <a name="licence"></a>Licence
 See `LICENSE` file
