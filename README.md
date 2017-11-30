@@ -25,10 +25,7 @@ Then you need to include base CSS and base JS of codemirror in .angular-cli.json
 
 ```json
   {
-    ...
-
     "apps": [{
-      ...
       "styles": [
         "../node_modules/codemirror/lib/codemirror.css",
       ],
@@ -83,10 +80,7 @@ if you want to change the themes or add mode, you must add this simple line
 
 ```json
   {
-    ...
-
     "apps": [{
-      ...
       "styles": [
         "../node_modules/codemirror/lib/codemirror.css",
         "../node_modules/codemirror/theme/dracula.css",
@@ -135,7 +129,7 @@ Added the Size for TextArea
 
 ## TODO LIST
 
-[ ] Use The instance of Codemirror in order to use it's method
+- [ ] Use The instance of Codemirror in order to use it's method
 
 ### <a name="config"></a>Configuration
 
