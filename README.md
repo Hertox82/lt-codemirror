@@ -2,6 +2,11 @@
 
 Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular application.
 
+| versione 			| Typescript Support 	  | Angular Support |
+| :-------------:   |:-----------------------:| :--------------:|
+|      ^2.x.x       |         ~2.3.3          |		^4.2.4		|
+|      ^3.x.x       |        ^2.4.2           |     ^5.0.0.		|	
+
 **Demo** : https://embed.plnkr.co/8e9gxss9u10VeFrv29Zt/
 
 ### <a name="install"></a>Installation
