@@ -96,7 +96,7 @@ export class CodemirrorComponent implements AfterViewInit, OnDestroy {
       this.blur.emit({instance, event});
     });
 
-    if (this.size != undefined || this.size != {}) {
+    if (this.size != undefined) {
       this.instance.setSize(this.size.w, this.size.h);
     }
   }
