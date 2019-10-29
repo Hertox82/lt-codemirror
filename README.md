@@ -1,27 +1,152 @@
-# LtCodemirrorTest
+# Angular - Codemirror component
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
+Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular application.
 
-## Development server
+| versione 			| Typescript Support 	  | Angular Support |
+| :-------------:   |:-----------------------:| :--------------:|
+|      ^1.x.x       |         ~2.3.3          |		^4.2.4		|
+|      ^2.x.x       |        ^2.4.2           |     ^5.0.0.		|
+|      ^3.x.x       |        ~2.9.2           |     ^6.0.0      |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+** NB: **
 
-## Code scaffolding
+- Breaking Changes:
+    - from version 3.x.x angular 2,4 and 5 not are more supported.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Demo** : https://embed.plnkr.co/8e9gxss9u10VeFrv29Zt/
 
-## Build
+### <a name="install"></a>Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Include Codemirror javascript files in your application (with files for modes)
+- Install ng2-codemirror
+  - NPM : `npm install lt-codemirror`
 
-## Running unit tests
+### <a name="dependencies"></a>Dependencies
+CodeMirror library is required for this component, if NPM doesn't install it for you, type this :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+  
+  npm install codemirror
 
-## Running end-to-end tests
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+CodeMirror need to be accessible by `import 'codemirror'`
 
-## Further help
+Then you need to include base CSS and base JS of codemirror in .angular-cli.json
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```json
+  {
+    "apps": [{
+      "styles": [
+        "../node_modules/codemirror/lib/codemirror.css",
+      ],
+      "scripts": [
+        "../node_modules/codemirror/lib/codemirror.js",
+      ]
+    }]
+  }
+```
+
+### <a name="sample"></a>Sample
+
+Include `CodemirrorModule` in your main module :
+
+```javascript
+import { CodemirrorModule } from 'lt-codemirror';
+
+@NgModule({
+  // ...
+  imports:      [
+    CodemirrorModule
+  ],
+  // ...
+})
+export class AppModule { }
+```
+
+```javascript
+import { Component } from 'angular2/core';
+
+@Component({
+  selector: 'sample',
+  template: `
+    <codemirror [(ngModel)]="code"
+      [config]="{...}"
+      [size]="{w:'100%',h:477}"
+      (focus)="onFocus()"
+      (blur)="onBlur()">
+    </codemirror>
+  `
+})
+export class Sample{
+  constructor(){
+    this.code = `// Some code...`;
+  }
+}
+```
+
+if you want to change the themes or add mode, you must add this simple line
+
+### Example
+
+```json
+  {
+    "apps": [{
+      "styles": [
+        "../node_modules/codemirror/lib/codemirror.css",
+        "../node_modules/codemirror/theme/dracula.css",
+      ],
+      "scripts": [
+        "../node_modules/codemirror/lib/codemirror.js",
+        "../node_modules/codemirror/mode/htmlmixed/htmlmixed.js"
+      ]
+    }]
+  }
+```
+
+```javascript
+import { Component } from 'angular2/core';
+import 'codemirror/mode/htmlmixed/htmlmixed';
+
+@Component({
+  selector: 'sample',
+  template: `
+    <codemirror [(ngModel)]="code"
+      [config]="config"
+      [size]="{w:'100%',h:477}"
+      (focus)="onFocus()"
+      (blur)="onBlur()">
+    </codemirror>
+  `
+})
+export class Sample{
+  constructor(){
+    this.code = `// Some code...`;
+    this.config = {
+      lineNumbers: true,
+      mode : 'htmlmixed',
+      styleActiveLine: true,
+      matchBrackets: true,
+      theme: 'dracula'
+    }
+  }
+}
+```
+
+# New Implementation
+
+Added the Size for TextArea
+
+
+## TODO LIST
+
+- [ ] Use The instance of Codemirror in order to use it's method
+
+### <a name="config"></a>Configuration
+
+* `config` : The configuration object for CodeMirror see http://codemirror.net/doc/manual.html#config
+
+Credits to **[Simon Babay](https://github.com/chymz)** forked from the [original package](https://github.com/chymz/ng2-codemirror).
+
+### <a name="licence"></a>Licence
+See `LICENSE` file

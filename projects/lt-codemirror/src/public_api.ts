@@ -1,5 +1,5 @@
 /*
  * Public API Surface of lt-codemirror
  */
-export * from './lt-codemirror.component';
-export * from './lt-codemirror.module';
+export { LtCodemirrorComponent } from './lt-codemirror.component';
+export { LtCodemirrorModule } from './lt-codemirror.module';

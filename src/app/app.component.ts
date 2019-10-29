@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lt-codemirror-test';
+  code: any;
+  config: any;
+
+  constructor() {
+    this.code = 'some code';
+    this.config = {
+      lineNumbers: true,
+      mode : 'htmlmixed',
+      styleActiveLine: true,
+      matchBrackets: true,
+      theme: 'dracula'
+    };
+  }
+
+  onBlur() {}
+
+  onFocus() {}
 }

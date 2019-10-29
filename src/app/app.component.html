@@ -16,5 +16,11 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
 
+  <lt-codemirror [(ngModel)] = "code"
+  [config]="config"
+  [size]="{w:'100%',h:477}"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+  ></lt-codemirror>
+</ul>
