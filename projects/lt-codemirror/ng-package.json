@@ -3,5 +3,9 @@
   "dest": "../../dist/lt-codemirror",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "codemirror"
+  ]
 }
