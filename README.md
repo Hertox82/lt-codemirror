@@ -34,14 +34,22 @@ Then you need to include base CSS and base JS of codemirror in angular.json
 
 ```json
   {
-    "apps": [{
-      "styles": [
-        "../node_modules/codemirror/lib/codemirror.css",
-      ],
-      "scripts": [
-        "../node_modules/codemirror/lib/codemirror.js",
-      ]
-    }]
+    "build": {
+          "options": {
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "./node_modules/codemirror/lib/codemirror.css",
+              "./node_modules/codemirror/theme/dracula.css"
+            ],
+            "scripts": [
+              "./node_modules/codemirror/lib/codemirror.js",
+              "./node_modules/codemirror/mode/htmlmixed/htmlmixed.js"
+            ]
+          },
   }
 ```
 
