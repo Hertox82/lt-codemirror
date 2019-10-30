@@ -8,7 +8,7 @@ Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular a
 |      ^2.x.x       |        ^2.4.2           |     ^5.0.0.		|
 |      ^3.x.x       |        ~2.9.2           |     ^6.0.0      |
 
-** NB: **
+**NB:**
 
 - Breaking Changes:
     - from version 3.x.x angular 2,4 and 5 not are more supported.
