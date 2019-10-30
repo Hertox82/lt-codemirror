@@ -1,6 +1,6 @@
 {
   "name": "lt-codemirror",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Angular6 LtCodemirror component",
   "keywords": [
     "angular",
@@ -27,9 +27,9 @@
     "url": "https://github.com/Hertox82/lt-codemirror/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/common": "^6.1.0",
+    "@angular/core": "^6.1.0",
+    "@angular/forms": "^6.1.0",
     "codemirror": "^5.49.2"
   }
 }
