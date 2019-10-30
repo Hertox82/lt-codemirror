@@ -1,6 +1,31 @@
 {
   "name": "lt-codemirror",
   "version": "3.0.0",
+  "description": "Angular6 LtCodemirror component",
+  "keywords": [
+    "angular",
+    "angular6",
+    "component",
+    "codemirror"
+  ],
+  "author": {
+    "name": "Simon Babay"
+  },
+  "contributors": [
+    {
+      "name": "Hernan Ariel De Luca",
+      "email": "hadeluca@gmail.com",
+      "url": "https://www.linkedin.com/in/hernan-ariel-de-luca-23842254/"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hertox82/lt-codemirror"
+  },
+  "bugs": {
+    "url": "https://github.com/Hertox82/lt-codemirror/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
