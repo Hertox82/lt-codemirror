@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+  "lib": {
+    "entryFile": "src/lt-codemirror/public_api.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "codemirror",
+    "core-js",
+    "rxjs",
+    "zone.js",
+    "angular"
+  ]
+}

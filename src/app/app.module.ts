@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
-import { LtCodemirrorModule, LtCodemirrorComponent } from 'lt-codemirror';
+import { LtCodemirrorModule } from '../lt-codemirror/lt-codemirror.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { LtCodemirrorModule, LtCodemirrorComponent } from 'lt-codemirror';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas:[
+  schemas: [
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA
   ]
