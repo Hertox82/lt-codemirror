@@ -1,43 +1,43 @@
-// Imports
-import {
-  Component,
+import { Component,
+  OnDestroy,
   Input,
   Output,
-  ElementRef,
   ViewChild,
   EventEmitter,
   forwardRef,
-  AfterViewInit,
-  OnDestroy,
+  AfterViewInit  
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import {NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as CodeMirror from 'codemirror';
 
 /**
  * CodeMirror component
  * Usage :
- * <codemirror [(ngModel)]="data" [config]="{...}"></codemirror>
+ * <lt-codemirror [(ngModel)]="data" [config]="{...}"></lt-codemirror>
  */
 @Component({
-  selector: 'codemirror',
+  selector: 'lt-codemirror',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CodemirrorComponent),
+      useExisting: forwardRef(() => LtCodemirrorComponent),
       multi: true
     }
   ],
-  template: `<textarea #host></textarea>`,
+  template: `
+   <textarea #host></textarea>
+  `,
+  styles: []
 })
-export class CodemirrorComponent implements AfterViewInit, OnDestroy {
+export class LtCodemirrorComponent implements AfterViewInit, OnDestroy {
 
   @Input() config;
-  @Input() size: {w:string|number, h:string|number};
+  @Input() size: {w: string|number, h: string|number};
   @Output() change = new EventEmitter();
   @Output() focus = new EventEmitter();
   @Output() blur = new EventEmitter();
   @Output() cursorActivity = new EventEmitter();
- 
+
   @ViewChild('host') host;
 
   @Output() instance = null;
@@ -47,9 +47,9 @@ export class CodemirrorComponent implements AfterViewInit, OnDestroy {
   /**
    * Constructor
    */
-  constructor() {}
+  constructor() { }
 
-  get value() { return this._value; }
+  get value() {return this._value; }
 
   @Input() set value(v) {
     if (v !== this._value) {
@@ -76,7 +76,7 @@ export class CodemirrorComponent implements AfterViewInit, OnDestroy {
   /**
    * Initialize codemirror
    */
-  codemirrorInit(config,size) {
+  codemirrorInit(config, size) {
     this.instance = CodeMirror.fromTextArea(this.host.nativeElement, config);
     this.instance.setValue(this._value);
 

@@ -4,15 +4,19 @@ Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular a
 
 | versione 			| Typescript Support 	  | Angular Support |
 | :-------------:   |:-----------------------:| :--------------:|
-|      ^2.x.x       |         ~2.3.3          |		^4.2.4		|
-|      ^3.x.x       |        ^2.4.2           |     ^5.0.0.		|	
+|      ^1.x.x       |         ~2.3.3          |		^4.2.4		|
+|      ^2.x.x       |        ^2.4.2           |     ^5.0.0.		|
+|      ^3.x.x       |        ~2.9.2           |     ^6.0.0      |
 
-**Demo** : https://embed.plnkr.co/8e9gxss9u10VeFrv29Zt/
+**NB:**
+
+- Breaking Changes:
+    - from version 3.x.x angular 2,4 and 5 not are more supported.
 
 ### <a name="install"></a>Installation
 
 - Include Codemirror javascript files in your application (with files for modes)
-- Install ng2-codemirror
+- Install lt-codemirror
   - NPM : `npm install lt-codemirror`
 
 ### <a name="dependencies"></a>Dependencies
@@ -26,18 +30,26 @@ CodeMirror library is required for this component, if NPM doesn't install it for
 
 CodeMirror need to be accessible by `import 'codemirror'`
 
-Then you need to include base CSS and base JS of codemirror in .angular-cli.json
+Then you need to include base CSS and base JS of codemirror in angular.json
 
 ```json
   {
-    "apps": [{
-      "styles": [
-        "../node_modules/codemirror/lib/codemirror.css",
-      ],
-      "scripts": [
-        "../node_modules/codemirror/lib/codemirror.js",
-      ]
-    }]
+    "build": {
+          "options": {
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "./node_modules/codemirror/lib/codemirror.css",
+              "./node_modules/codemirror/theme/dracula.css"
+            ],
+            "scripts": [
+              "./node_modules/codemirror/lib/codemirror.js",
+              "./node_modules/codemirror/mode/htmlmixed/htmlmixed.js"
+            ]
+          },
   }
 ```
 
@@ -129,12 +141,8 @@ export class Sample{
 
 # New Implementation
 
-Added the Size for TextArea
+- Added the Size for TextArea
 
-
-## TODO LIST
-
-- [ ] Use The instance of Codemirror in order to use it's method
 
 ### <a name="config"></a>Configuration
 
