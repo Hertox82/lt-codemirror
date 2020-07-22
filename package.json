@@ -1,80 +1,53 @@
 {
-  "name": "lt-codemirror",
-  "version": "3.0.3",
-  "description": "Angular6 LtCodemirror component",
-  "private": false,
-  "keywords": [
-    "angular",
-    "angular6",
-    "component",
-    "codemirror"
-  ],
-  "author": {
-    "name": "Simon Babay"
-  },
-  "contributors": [
-    {
-      "name": "Hernan Ariel De Luca",
-      "email": "hadeluca@gmail.com",
-      "url": "https://www.linkedin.com/in/hernan-ariel-de-luca-23842254/"
-    }
-  ],
+  "name": "lt-codemirror-test",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json"
+    "e2e": "ng e2e"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Hertox82/lt-codemirror"
-  },
-  "bugs": {
-    "url": "https://github.com/Hertox82/lt-codemirror/issues"
-  },
-  "peerDependencies": {
-    "@angular/common": "^6.1.0",
-    "@angular/core": "^6.1.0",
-    "@angular/forms": "^6.1.0"
-  },
+  "private": true,
   "dependencies": {
-    "@angular/animations": "^6.1.10",
-    "@angular/common": "^6.1.10",
-    "@angular/compiler": "^6.1.10",
-    "@angular/core": "^6.1.10",
-    "@angular/forms": "^6.1.10",
-    "@angular/platform-browser": "^6.1.10",
-    "@angular/platform-browser-dynamic": "^6.1.10",
-    "@angular/router": "^6.1.10",
-    "codemirror": "^5.49.2",
-    "core-js": "^2.6.11",
-    "rxjs": "^6.6.0",
-    "zone.js": "^0.8.29"
+    "@angular/animations": "^6.1.0",
+    "@angular/common": "^6.1.0",
+    "@angular/compiler": "^6.1.0",
+    "@angular/core": "^6.1.0",
+    "@angular/forms": "^6.1.0",
+    "@angular/http": "^6.1.0",
+    "@angular/platform-browser": "^6.1.0",
+    "@angular/platform-browser-dynamic": "^6.1.0",
+    "@angular/router": "^6.1.0",
+    "core-js": "^2.5.4",
+    "rxjs": "~6.2.0",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.8.9",
-    "@angular/cli": "^6.2.9",
-    "@angular/compiler-cli": "^6.1.10",
-    "@angular/language-service": "^6.1.10",
-    "@types/jasmine": "^2.8.17",
-    "@types/jasminewd2": "^2.0.8",
-    "@types/node": "^8.10.61",
-    "codelyzer": "^4.5.0",
-    "jasmine-core": "^2.99.1",
-    "jasmine-spec-reporter": "^4.2.1",
-    "karma": "^3.1.4",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage-istanbul-reporter": "^2.1.1",
-    "karma-jasmine": "^1.1.2",
+    "@angular-devkit/build-angular": "~0.8.0",
+    "@angular-devkit/build-ng-packagr": "~0.8.0",
+    "@angular/cli": "~6.2.9",
+    "@angular/compiler-cli": "^6.1.0",
+    "@angular/language-service": "^6.1.0",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.3.0",
+    "codemirror": "^5.56.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~3.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^5.7.1",
-    "protractor": "^5.4.4",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.20.1",
-    "typescript": "^2.9.2"
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tsickle": ">=0.29.0",
+    "tslib": "^1.9.0",
+    "tslint": "~5.11.0",
+    "typescript": "~2.9.2"
   }
 }

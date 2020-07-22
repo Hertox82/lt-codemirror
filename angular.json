@@ -2,48 +2,45 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "cli": {
-    "packageManager": "npm"
-  },
   "projects": {
-    "lt-codemirror": {
-      "root": "src",
+    "lt-codemirror-test": {
+      "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "lt",
+      "prefix": "app",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/lt-codemirror-test",
             "index": "src/index.html",
+            "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "main": "src/main.ts",
             "assets": [
-              "src/assets",
-              "src/favicon.ico"  
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-        "./node_modules/codemirror/lib/codemirror.css",
-        "./node_modules/codemirror/theme/dracula.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./dist/lt-codemirror/node_modules/codemirror/lib/codemirror.css",
+              "./dist/lt-codemirror/node_modules/codemirror/theme/dracula.css"
             ],
-            "scripts": [       
-              "./node_modules/codemirror/mode/xml/xml.js",
-              "./node_modules/codemirror/mode/javascript/javascript.js",
-              "./node_modules/codemirror/mode/css/css.js"
-            ]
+            "scripts": [
+              "./dist/lt-codemirror/node_modules/codemirror/lib/codemirror.js",
+              "./dist/lt-codemirror/node_modules/codemirror/mode/htmlmixed/htmlmixed.js"
+            ],
+            "preserveSymlinks": true
           },
           "configurations": {
-            "productions": {
-                "fileReplacements": [
-                    {
-                        "replace": "src/environments/environment.ts",
-                        "with": "src/environments/environment.prod.ts"
-                    }
-                ],
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -54,23 +51,23 @@
               "vendorChunk": false,
               "buildOptimizer": true
             }
-        }
+          }
         },
         "serve": {
-          "builder":"@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "lt-codemirror:build"
+            "browserTarget": "lt-codemirror-test:build"
           },
           "configurations": {
-              "production": {
-                  "browserTarget": "lt-codemirror:production"
-              }
+            "production": {
+              "browserTarget": "lt-codemirror-test:build:production"
+            }
           }
         },
         "extract-i18n": {
-          "builder":"@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-              "browserTarget": "lt-codemirror:build"
+            "browserTarget": "lt-codemirror-test:build"
           }
         },
         "test": {
@@ -94,7 +91,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.lib.json",
+              "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
             ],
             "exclude": [
@@ -104,7 +101,7 @@
         }
       }
     },
-    "lt-codemirror-e2e": {
+    "lt-codemirror-test-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -112,11 +109,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "lt-codemirror:serve"
+            "devServerTarget": "lt-codemirror-test:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "lt-codemirror:serve:production"
+              "devServerTarget": "lt-codemirror-test:serve:production"
             }
           }
         },
@@ -130,7 +127,42 @@
           }
         }
       }
+    },
+    "lt-codemirror": {
+      "root": "projects/lt-codemirror",
+      "sourceRoot": "projects/lt-codemirror/src",
+      "projectType": "library",
+      "prefix": "lt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lt-codemirror/tsconfig.lib.json",
+            "project": "projects/lt-codemirror/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lt-codemirror/src/test.ts",
+            "tsConfig": "projects/lt-codemirror/tsconfig.spec.json",
+            "karmaConfig": "projects/lt-codemirror/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lt-codemirror/tsconfig.lib.json",
+              "projects/lt-codemirror/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "lt-codemirror"
+  "defaultProject": "lt-codemirror-test"
 }
