@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LtCodemirrorModule } from 'lt-codemirror';
+import { LtCodemirrorModule } from 'src/lt-codemirror/lt-codemirror.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     LtCodemirrorModule
   ],
   providers: [],

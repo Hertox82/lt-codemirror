@@ -4,13 +4,15 @@ Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular a
 
 | versione 			| Typescript Support 	  | Angular Support |
 | :-------------:   |:-----------------------:| :--------------:|
-|      ^1.x.x       |         ~2.3.3          |		^4.2.4		|
-|      ^2.x.x       |        ^2.4.2           |     ^5.0.0.		|
+|      ^1.x.x       |         ~2.3.3          |     ^4.2.4      |
+|      ^2.x.x       |        ^2.4.2           |     ^5.0.0      |
 |      ^3.x.x       |        ~2.9.2           |     ^6.0.0      |
+|      ^4.x.x       |       ~3.2.2            |     ^7.0.0      |
 
 **NB:**
 
 - Breaking Changes:
+    - from version 4.x.x anguarl 6 is not supported.
     - from version 3.x.x angular 2,4 and 5 not are more supported.
 
 ### <a name="install"></a>Installation

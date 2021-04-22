@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { LtCodemirrorComponent } from './lt-codemirror.component';
 import { CommonModule } from '@angular/common';
+import { LtCodemirrorComponent } from './lt-codemirorr.component';
 
 @NgModule({
   imports: [
