@@ -2,18 +2,20 @@
 
 Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular application.
 
-| versione 			| Typescript Support 	  | Angular Support |
+| versione          | Typescript Support      | Angular Support |
 | :-------------:   |:-----------------------:| :--------------:|
-|      ^1.x.x       |         ~2.3.3          |     ^4.2.4      |
+|      ^1.x.x       |        ~2.3.3           |     ^4.2.4      |
 |      ^2.x.x       |        ^2.4.2           |     ^5.0.0      |
 |      ^3.x.x       |        ~2.9.2           |     ^6.0.0      |
-|      ^4.x.x       |       ~3.2.2            |     ^7.0.0      |
+|      ^4.x.x       |        ~3.2.2           |     ^7.0.0      |
+|      ^5.x.x       |        ~3.5.3           |     ^8.0.0      |
 
 **NB:**
 
 - Breaking Changes:
-    - from version 4.x.x anguarl 6 is not supported.
-    - from version 3.x.x angular 2,4 and 5 not are more supported.
+  - from version 5.x.x angular 7 is not supported.
+  - from version 4.x.x angular 6 is not supported.
+  - from version 3.x.x angular 2,4 and 5 not are more supported.
 
 ### <a name="install"></a>Installation
 
@@ -73,7 +75,7 @@ export class AppModule { }
 ```
 
 ```javascript
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'sample',
@@ -113,7 +115,7 @@ if you want to change the themes or add mode, you must add this simple line
 ```
 
 ```javascript
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 
 @Component({

@@ -37,7 +37,7 @@ export class LtCodemirrorComponent implements AfterViewInit, OnDestroy {
 @Output() blur = new EventEmitter();
 @Output() cursorActivity = new EventEmitter();
 
-@ViewChild('host') host;
+@ViewChild('host', {static: false}) host;
 
 @Output() instance = null;
 

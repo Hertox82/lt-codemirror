@@ -1,5 +1,17 @@
 # Changelog
 
+## v5.0.0 (03-05-2021)
+
+- Added support to Angular 8
+- Breaking changes
+  - remove support to Angular 7
+
+## v4.0.0 (22-04-2021)
+
+- Added support to Angular 7
+- Breaking changes
+  - remove support to Angular 6
+
 ## v3.0.4 (22-07-2020)
 
 - Fixed folder management
