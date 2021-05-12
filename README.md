@@ -9,6 +9,7 @@ Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular a
 |      ^3.x.x       |        ~2.9.2           |     ^6.0.0      |
 |      ^4.x.x       |        ~3.2.2           |     ^7.0.0      |
 |      ^5.x.x       |        ~3.5.3           |     ^8.0.0      |
+|      ^6.x.x       |        ~3.8.3           |     ^9.0.0      |
 
 **NB:**
 
