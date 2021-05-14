@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.0 (14-05-2021)
+
+- Upgrade to Angular 10
+- Breaking changes:
+  - remove support to Angular 9
+
 ## v6.0.0 (12-05-2021)
 
 - Added support to Angular 9
