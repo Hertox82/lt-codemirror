@@ -30,16 +30,19 @@ styles: []
 })
 export class LtCodemirrorComponent implements AfterViewInit, OnDestroy {
 
-@Input() config;
-@Input() size: {w: string|number, h: string|number};
+@Input() config: any;
+@Input() size: {w: string|number, h: string|number} | undefined;
+// tslint:disable-next-line:no-output-native
 @Output() change = new EventEmitter();
+// tslint:disable-next-line:no-output-native
 @Output() focus = new EventEmitter();
+// tslint:disable-next-line:no-output-native
 @Output() blur = new EventEmitter();
 @Output() cursorActivity = new EventEmitter();
 
-@ViewChild('host', {static: false}) host;
+@ViewChild('host', {static: false}) host: any;
 
-@Output() instance = null;
+@Output() instance: any | undefined;
 
 val = '';
 
@@ -48,9 +51,9 @@ val = '';
  */
 constructor() { }
 
-get value() {return this.val; }
+get value(): any {return this.val; }
 
-@Input() set value(v) {
+@Input() set value(v: any) {
     if (v !== this.val) {
     this.val = v;
     this.onChange(v);
@@ -60,14 +63,12 @@ get value() {return this.val; }
 /**
  * On component destroy
  */
-ngOnDestroy() {
-
-}
+ngOnDestroy(): void {}
 
 /**
  * On component view init
  */
-ngAfterViewInit() {
+ngAfterViewInit(): void {
     this.config = this.config || {};
     this.codemirrorInit(this.config,this.size);
 }
@@ -75,7 +76,7 @@ ngAfterViewInit() {
 /**
  * Initialize codemirror
  */
-codemirrorInit(config, size) {
+codemirrorInit(config: any, size: any): void {
     this.instance = CodeMirror.fromTextArea(this.host.nativeElement, config);
     this.instance.setValue(this.val);
 
@@ -83,15 +84,15 @@ codemirrorInit(config, size) {
     this.updateValue(this.instance.getValue());
     });
 
-    this.instance.on('focus', (instance, event) => {
+    this.instance.on('focus', (instance: any, event: any) => {
     this.focus.emit({instance, event});
     });
 
-    this.instance.on('cursorActivity', (instance) => {
+    this.instance.on('cursorActivity', (instance: any) => {
     this.cursorActivity.emit({instance});
     });
 
-    this.instance.on('blur', (instance, event) => {
+    this.instance.on('blur', (instance: any, event: any) => {
     this.blur.emit({instance, event});
     });
 
@@ -103,7 +104,7 @@ codemirrorInit(config, size) {
 /**
  * Value update process
  */
-updateValue(value) {
+updateValue(value: any): void {
     this.value = value;
     this.onTouched();
     this.change.emit(value);
@@ -112,14 +113,14 @@ updateValue(value) {
 /**
  * Implements ControlValueAccessor
  */
-writeValue(value) {
+writeValue(value: any): void {
     this.val = value || '';
     if (this.instance) {
     this.instance.setValue(this.val);
     }
 }
-onChange(_) {}
-onTouched() {}
-registerOnChange(fn) { this.onChange = fn; }
-registerOnTouched(fn) { this.onTouched = fn; }
+onChange(v: any): void {}
+onTouched(): void {}
+registerOnChange(fn: any): void { this.onChange = fn; }
+registerOnTouched(fn: any): void { this.onTouched = fn; }
 }

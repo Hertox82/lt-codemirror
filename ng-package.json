@@ -6,5 +6,5 @@
             "codemirror": "codemirror"
           }
     },
-    "whitelistedNonPeerDependencies": ["angular","rxjs","zone.js","codemirror"]
+    "allowedNonPeerDependencies": ["angular","rxjs","zone.js","codemirror"]
 }

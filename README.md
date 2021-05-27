@@ -11,10 +11,12 @@ Use the [CodeMirror (5.x)](http://codemirror.net/) code editor in your Angular a
 |      ^5.x.x       |        ~3.5.3           |     ^8.0.0      |
 |      ^6.x.x       |        ~3.8.3           |     ^9.0.0      |
 |      ^7.x.x       |        ~4.0.2           |     ^10.0.0     |
+|      ^8.x.x       |        ~4.1.5           |     ^11.0.0     |
 
 **NB:**
 
 - Breaking Changes:
+  - from version 8.x.x angular 10 is not supported.
   - from version 7.x.x angular 9 is not supported.
   - from version 6.x.x angular 8 is not supported.
   - from version 5.x.x angular 7 is not supported.
